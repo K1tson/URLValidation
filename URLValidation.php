@@ -9,7 +9,7 @@
  *
  * Params -
  *   URL: A URL e.g. https://www.foo.com/dfadf?fdsf or http://foo.com/adasdas
- *   Array: 1 for parsed url data and network details (IP, Reverse Lookup, etc...) 
+ *   Array: 1 for parsed url data and network details (IP, RBL, etc...) 
  *   Debug: Debug Text for testing purposes.
 */
 
@@ -40,11 +40,16 @@ class UrlValidation {
             
             return $this->error($result);
             
-        } elseif($result >= 1) { //If Errors - Debug Mode Disabled
+        } elseif($result >= 1 && $array == 1) { //Error - Return Array
+            
+            return $this->dataArr;
+            
+        } elseif($result >= 1) {
             
             return false;
-        }//End of Error Checks
-        
+            
+        }
+
         
         if($array === 1) {
             
@@ -138,6 +143,4 @@ class UrlValidation {
         return $this->dataArr;
     }
 }
-
-
 
