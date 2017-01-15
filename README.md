@@ -43,7 +43,7 @@ As you can see above, `www.bokranzr.com` is listed as malicious website so the d
 
 ##Detailed Output (Debug):
 
-You can also output the results as an array by using add the follwing parameter:
+You can also output the results as an array by adding a `1` after your url parameter:
 
 ```php
 
